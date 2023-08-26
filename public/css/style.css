@@ -1,0 +1,64 @@
+.dataTables_length {
+  width: 30% !important;
+  float: left !important;
+}
+
+.dt-buttons {
+  width: 30% !important;
+  float: left !important;
+  text-align: center !important;
+}
+
+.dataTables_filter {
+  width: 30% !important;
+  float: left !important;
+  margin-bottom: 20px !important;
+}
+
+.delete_items_from_dt {
+  background: red;
+  color: white;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.buttons-print {
+  background: green;
+  color: white;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.buttons-copy {
+  background: #322653;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.buttons-collection {
+  background: #982176;
+  color: white;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.table-dataTable thead {
+  background: #322653;
+}
+
+.page-header {
+  background: linear-gradient(to right, #92ff07 0%, #9b1313 100%)
+}
+
+.card-body {
+  border-top: 2px solid blue;
+}
+
+.action-button {
+  border: none;
+}
+
+.action-button:focus {
+  outline: none !important;
+}

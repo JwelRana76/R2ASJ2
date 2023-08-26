@@ -1,6 +1,6 @@
 <div class="card ">
     <div class="card-body table_card_body">
-        <table class="table-" id="{{ $id }}">
+        <table class="table table-striped" id="{{ $id }}">
             <thead>
                 <tr>
                     <th>

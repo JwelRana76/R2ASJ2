@@ -11,7 +11,6 @@ class Warehouse extends Model
 
     public static $columns = [
         ['name' => 'name', 'data' => 'name'],
-        ['name' => 'code', 'data' => 'code'],
         ['name' => 'action', 'data' => 'action'],
     ];
 

@@ -14,7 +14,7 @@ class WarehouseService extends Service {
         $warehouses = $this->model::active();
 
         return DataTables::of($warehouses)
-            ->addColumn('action', fn($item) => 0)
+            ->addColumn('action', fn ($item) => view('warehouse.action', compact('item'))->render())
             ->make(true);
     }
 
