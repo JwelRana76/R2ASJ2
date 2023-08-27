@@ -17,5 +17,20 @@ class WarehouseService extends Service {
             ->addColumn('action', fn ($item) => view('warehouse.action', compact('item'))->render())
             ->make(true);
     }
+  public function create($data)
+  {
+    if ($data['warehouse_id'] != '') {
+      $warehouses = $this->model::findOrFail($data['warehouse_id'])->fill([
+        'name' => $data['name'],
+      ]);
+      $warehouses->save();
+    } else {
+      $this->model::create($data);
+    }
+  }
+  function delete($id)
+  {
+    $this->model::findOrFail($id)->delete();
+  }
 
 }

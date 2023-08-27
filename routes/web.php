@@ -80,7 +80,7 @@ Route::group(['as'=>'backend.','namespace'=>'Backend','middleware'=>['auth']], f
         Route::post('/store',[WarehouseController::class,'store'])->name('store');
         Route::get('/edit/{id}',[WarehouseController::class,'edit'])->name('edit');
         Route::post('/update/',[WarehouseController::class,'update'])->name('update');
-        Route::delete('/destroy/{id}',[WarehouseController::class,'destroy'])->name('destroy');
+        Route::get('/destroy/{id}', [WarehouseController::class, 'destroy'])->name('destroy');
     });
 
     Route::group(['as'=>'category.','prefix' => 'product/setting/category'], function() {

@@ -51,7 +51,8 @@
   background: linear-gradient(to right, #92ff07 0%, #9b1313 100%)
 }
 
-.card-body {
+.card-body,
+.card-header {
   border-top: 2px solid blue;
 }
 
@@ -61,4 +62,24 @@
 
 .action-button:focus {
   outline: none !important;
+}
+/* responsive */
+
+@media only screen and (max-width: 600px) {
+  .dataTables_length {
+    width: 100% !important;
+    float: left !important;
+  }
+
+  .dt-buttons {
+    width: 100% !important;
+    float: left !important;
+    text-align: center !important;
+  }
+
+  .dataTables_filter {
+    width: 100% !important;
+    float: left !important;
+    margin-bottom: 20px !important;
+  }
 }

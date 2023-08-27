@@ -33,7 +33,7 @@ class WarehouseController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -44,7 +44,9 @@ class WarehouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $this->baseService->create($data);
+        return redirect()->route('backend.warehouse.index')->with('success', 'Warehouse Created Successfully');
     }
 
     /**
@@ -66,7 +68,9 @@ class WarehouseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Warehouse::find($id);
+        $columns = Warehouse::$columns;
+        return view('warehouse.index', compact('columns', 'data'));
     }
 
     /**
@@ -78,7 +82,7 @@ class WarehouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**
@@ -89,6 +93,7 @@ class WarehouseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->baseService->delete($id);
+        return redirect()->route('backend.warehouse.index')->with('success', 'Warehouse Deleted Successfully');
     }
 }

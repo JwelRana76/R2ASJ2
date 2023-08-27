@@ -9,6 +9,8 @@ class Warehouse extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public static $columns = [
         ['name' => 'name', 'data' => 'name'],
         ['name' => 'action', 'data' => 'action'],
