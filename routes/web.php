@@ -16,7 +16,7 @@ use App\Http\Controllers\Product\SaleController;
 use App\Http\Controllers\Product\SizeController;
 use App\Http\Controllers\Product\UnitController;
 use App\Http\Controllers\Hrm\DepartmentCotroller;
-use App\Http\Controllers\Income\IncomeController;
+use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\Invest\InvestController;
 use App\Http\Controllers\Product\BrandController;
 use App\Http\Controllers\Setting\BazarController;
@@ -39,7 +39,7 @@ use App\Http\Controllers\Setting\DivisionController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Sale\DueCollectionController;
 use App\Http\Controllers\Expense\ExpenseCategoryController;
-use App\Http\Controllers\Income\IncomeCategoryController;
+use App\Http\Controllers\IncomeCategoryController;
 use App\Http\Controllers\Report\ReportController;
 use App\Http\Controllers\WarehouseController;
 

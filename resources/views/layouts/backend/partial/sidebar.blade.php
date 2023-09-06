@@ -193,9 +193,6 @@
     <div id="income-menu" class="collapse {{Request::is('income*')?'show':''}}" aria-labelledby="headingForm" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         @if (userHasPermission('income-index'))
-        <a class="collapse-item {{Request::is('income/category')?'active':''}}" href="{{ route('backend.income_category.index') }}">{{ __('sidebar.income-category') }}</a>
-        @endif
-        @if (userHasPermission('income-index'))
         <a class="collapse-item {{Request::is('income')?'active':''}}" href="{{ route('backend.income.index') }}">{{ __('sidebar.income-list') }}</a>
         @endif
       </div>
