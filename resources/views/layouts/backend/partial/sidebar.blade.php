@@ -161,7 +161,7 @@
         <a class="collapse-item {{Request::is('expense')?'active':''}}" href="{{ route('backend.expense.index') }}">{{ __('sidebar.expense-list') }}</a>
         @endif
         @if (userHasPermission('expense-advance'))
-        <a class="collapse-item {{Request::is('expense/category')?'active':''}}" href="{{ route('backend.expense_category.index') }}">{{ __('sidebar.expense-category') }}</a>
+        <a class="collapse-item {{Request::is('expense/category')?'active':''}}" href="{{ route('backend.expense.category.index') }}">{{ __('sidebar.expense-category') }}</a>
         @endif
       </div>
     </div>
@@ -194,6 +194,9 @@
       <div class="bg-white py-2 collapse-inner rounded">
         @if (userHasPermission('income-index'))
         <a class="collapse-item {{Request::is('income')?'active':''}}" href="{{ route('backend.income.index') }}">{{ __('sidebar.income-list') }}</a>
+        @endif
+        @if (userHasPermission('income-index'))
+        <a class="collapse-item {{Request::is('income/category')?'active':''}}" href="{{ route('backend.income.category.index') }}">{{ __('sidebar.income-category') }}</a>
         @endif
       </div>
     </div>

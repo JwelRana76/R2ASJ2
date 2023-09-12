@@ -12,33 +12,33 @@ use App\Http\Controllers\PermissionController;
 
 
 use function PHPUnit\Framework\directoryExists;
-use App\Http\Controllers\Product\SaleController;
-use App\Http\Controllers\Product\SizeController;
-use App\Http\Controllers\Product\UnitController;
+use App\Http\Controllers\SaleController;
+use App\Http\Controllers\SizeController;
+use App\Http\Controllers\UnitController;
 use App\Http\Controllers\Hrm\DepartmentCotroller;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\Invest\InvestController;
-use App\Http\Controllers\Product\BrandController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\Setting\BazarController;
 
 
 //coded by rakib
 use App\Http\Controllers\GeneralSettingController;
 
-use App\Http\Controllers\Product\ReturnController;
+use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\Account\AccountController;
-use App\Http\Controllers\Expense\ExpenseController;
-use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Setting\UpazilaController;
-use App\Http\Controllers\Product\CategoryController;
-use App\Http\Controllers\Product\PurchaseController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PurchaseController;
 
-use App\Http\Controllers\Product\SupplierController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\Setting\DistrictController;
 use App\Http\Controllers\Setting\DivisionController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Sale\DueCollectionController;
-use App\Http\Controllers\Expense\ExpenseCategoryController;
+use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\IncomeCategoryController;
 use App\Http\Controllers\Report\ReportController;
 use App\Http\Controllers\WarehouseController;
@@ -78,37 +78,32 @@ Route::group(['as'=>'backend.','namespace'=>'Backend','middleware'=>['auth']], f
     Route::group(['as'=>'warehouse.','prefix' => 'setting/warehouse'], function() {
         Route::get('/',[WarehouseController::class,'index'])->name('index');
         Route::post('/store',[WarehouseController::class,'store'])->name('store');
-        Route::get('/edit/{id}',[WarehouseController::class,'edit'])->name('edit');
-        Route::post('/update/',[WarehouseController::class,'update'])->name('update');
+        Route::get('/edit/{id}', [WarehouseController::class, 'edit'])->name('edit');
         Route::get('/destroy/{id}', [WarehouseController::class, 'destroy'])->name('destroy');
     });
 
     Route::group(['as'=>'category.','prefix' => 'product/setting/category'], function() {
         Route::get('/',[CategoryController::class,'index'])->name('index');
         Route::post('/store',[CategoryController::class,'store'])->name('store');
-        Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
-        Route::post('/update/',[CategoryController::class,'update'])->name('update');
+        Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('edit');
         Route::delete('/destroy/{id}',[CategoryController::class,'destroy'])->name('destroy');
     });
     Route::group(['as'=>'unit.','prefix' => 'product/setting/unit'], function() {
         Route::get('/',[UnitController::class,'index'])->name('index');
         Route::post('/store',[UnitController::class,'store'])->name('store');
-        Route::get('/edit/{id}',[UnitController::class,'edit'])->name('edit');
-        Route::post('/update/',[UnitController::class,'update'])->name('update');
+        Route::get('/edit/{id}', [UnitController::class, 'edit'])->name('edit');
         Route::delete('/destroy/{id}',[UnitController::class,'destroy'])->name('destroy');
     });
     Route::group(['as'=>'size.','prefix' => 'product/setting/size'], function() {
         Route::get('/',[SizeController::class,'index'])->name('index');
         Route::post('/store',[SizeController::class,'store'])->name('store');
-        Route::get('/edit/{id}',[SizeController::class,'edit'])->name('edit');
-        Route::post('/update/',[SizeController::class,'update'])->name('update');
+        Route::get('/edit/{id}', [SizeController::class, 'edit'])->name('edit');
         Route::delete('/destroy/{id}',[SizeController::class,'destroy'])->name('destroy');
     });
     Route::group(['as'=>'brand.','prefix' => 'product/setting/brand'], function() {
         Route::get('/',[BrandController::class,'index'])->name('index');
         Route::post('/store',[BrandController::class,'store'])->name('store');
-        Route::get('/edit/{id}',[BrandController::class,'edit'])->name('edit');
-        Route::post('/update/',[BrandController::class,'update'])->name('update');
+        Route::get('/edit/{id}', [BrandController::class, 'edit'])->name('edit');
         Route::delete('/destroy/{id}',[BrandController::class,'destroy'])->name('destroy');
     });
     Route::group(['as'=>'product.','prefix' => 'product'], function() {
@@ -253,7 +248,7 @@ Route::group(['as'=>'backend.','namespace'=>'Backend','middleware'=>['auth']], f
         Route::post('/update/',[ExpenseController::class,'update'])->name('update');
         Route::delete('/destroy/{id}',[ExpenseController::class,'destroy'])->name('destroy');
     });
-    Route::group(['as'=>'expense_category.','prefix' => 'expense/category'], function() {
+    Route::group(['as' => 'expense.category.', 'prefix' => 'expense/category'], function () {
         Route::get('/',[ExpenseCategoryController::class,'index'])->name('index');
         Route::post('/store',[ExpenseCategoryController::class,'store'])->name('store');
         Route::get('/edit/{id}',[ExpenseCategoryController::class,'edit'])->name('edit');
@@ -267,11 +262,10 @@ Route::group(['as'=>'backend.','namespace'=>'Backend','middleware'=>['auth']], f
         Route::post('/update/',[IncomeController::class,'update'])->name('update');
         Route::delete('/destroy/{id}',[IncomeController::class,'destroy'])->name('destroy');
     });
-    Route::group(['as'=>'income_category.','prefix' => 'income/category'], function() {
+    Route::group(['as' => 'income.category.', 'prefix' => 'income/category'], function () {
         Route::get('/',[IncomeCategoryController::class,'index'])->name('index');
         Route::post('/store',[IncomeCategoryController::class,'store'])->name('store');
-        Route::get('/edit/{id}',[IncomeCategoryController::class,'edit'])->name('edit');
-        Route::post('/update/',[IncomeCategoryController::class,'update'])->name('update');
+        Route::get('/edit/{id}', [IncomeCategoryController::class, 'edit'])->name('edit');
         Route::delete('/destroy/{id}',[IncomeCategoryController::class,'destroy'])->name('destroy');
     });
 

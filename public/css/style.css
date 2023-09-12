@@ -48,12 +48,15 @@
 }
 
 .page-header {
-  background: linear-gradient(to right, #92ff07 0%, #9b1313 100%)
+  background: linear-gradient(to right, #cecfce 0%, #f5e1e1 100%);
+    color: black;
 }
 
 .card-body,
 .card-header {
   border-top: 2px solid blue;
+  color: black !important;
+    border-radius: 5px;
 }
 
 .action-button {
