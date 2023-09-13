@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
-class ExpenseService {
+class ExpenseService extends Service
+{
 
 }

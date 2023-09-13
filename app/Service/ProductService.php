@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
-class ProductService {
+class ProductService extends Service
+{
 
 }

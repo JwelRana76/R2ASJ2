@@ -214,6 +214,9 @@
         @if (userHasPermission('supplier-index'))
         <a class="collapse-item {{Request::is('supplier')?'active':''}}" href="{{ route('backend.supplier.index') }}">{{ __('sidebar.supplier-list') }}</a>
         @endif
+        @if (userHasPermission('supplier-store'))
+        <a class="collapse-item {{Request::is('supplier/create')?'active':''}}" href="{{ route('backend.supplier.create') }}">{{ __('sidebar.add-supplier') }}</a>
+        @endif
       </div>
     </div>
   </li>

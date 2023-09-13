@@ -8,7 +8,7 @@ use App\Models\Size;
 use App\Models\Unit;
 use Yajra\DataTables\Facades\DataTables;
 
-class ProductSettingService
+class ProductSettingService extends Service
 {
   protected $brand = Brand::class;
   protected $category = Category::class;

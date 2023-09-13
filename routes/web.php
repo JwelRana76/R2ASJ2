@@ -129,10 +129,11 @@ Route::group(['as'=>'backend.','namespace'=>'Backend','middleware'=>['auth']], f
     });
     Route::group(['as'=>'supplier.','prefix' => 'supplier'], function() {
         Route::get('/',[SupplierController::class,'index'])->name('index');
+        Route::get('/create', [SupplierController::class, 'create'])->name('create');
         Route::post('/store',[SupplierController::class,'store'])->name('store');
         Route::get('/edit/{id}',[SupplierController::class,'edit'])->name('edit');
-        Route::post('/update/',[SupplierController::class,'update'])->name('update');
-        Route::delete('/destroy/{id}',[SupplierController::class,'destroy'])->name('destroy');
+        Route::post('/update/{id}', [SupplierController::class, 'update'])->name('update');
+        Route::get('/destroy/{id}', [SupplierController::class, 'destroy'])->name('destroy');
     });
 
     Route::group(['as'=>'sale.','prefix' => 'sale'], function() {

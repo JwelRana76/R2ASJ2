@@ -6,7 +6,7 @@ use App\Models\Income;
 use App\Models\IncomeCategory;
 use Yajra\DataTables\Facades\DataTables;
 
-class IncomeService
+class IncomeService extends Service
 {
   protected $model = Income::class;
   protected $category = IncomeCategory::class;
